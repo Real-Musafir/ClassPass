@@ -8,6 +8,9 @@ import YogaItem from '../component/YogaItem'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 class Home extends Component {
+  gotoSingleItem = () => {
+    this.props.navigation.navigate('SingleItem')
+  }
   render() {
     const scrlStyle = {
       backgroundColor: '#fff',
@@ -21,6 +24,22 @@ class Home extends Component {
     const subTitleStyle = {
       ...Typography.subTitle,
       marginBottom: 15,
+    }
+    const imageContainer = {
+      marginRight: 10,
+      borderWidth: 1,
+      borderColor: Colors.lightGray,
+    }
+    const titleText = {
+      fontSize: 18,
+      marginTop: 20,
+      marginLeft: 10,
+      marginBottom: 15,
+    }
+    const subTitle = {
+      marginLeft: 10,
+      marginBottom: 15,
+      color: 'gray',
     }
 
     const items = [
@@ -81,6 +100,9 @@ class Home extends Component {
                   status={item.status}
                   rating={item.rating}
                   total={item.total}
+                  gotoSingleItem={() => {
+                    this.gotoSingleItem()
+                  }}
                 />
               ))}
             </ScrollView>
@@ -99,6 +121,9 @@ class Home extends Component {
                   status={item.status}
                   rating={item.rating}
                   total={item.total}
+                  gotoSingleItem={() => {
+                    this.gotoSingleItem()
+                  }}
                 />
               ))}
             </ScrollView>
@@ -117,6 +142,9 @@ class Home extends Component {
                   status={item.status}
                   rating={item.rating}
                   total={item.total}
+                  gotoSingleItem={() => {
+                    this.gotoSingleItem()
+                  }}
                 />
               ))}
             </ScrollView>
@@ -135,6 +163,9 @@ class Home extends Component {
                   status={item.status}
                   rating={item.rating}
                   total={item.total}
+                  gotoSingleItem={() => {
+                    this.gotoSingleItem()
+                  }}
                 />
               ))}
             </ScrollView>
@@ -153,9 +184,26 @@ class Home extends Component {
                   status={item.status}
                   rating={item.rating}
                   total={item.total}
+                  gotoSingleItem={() => {
+                    this.gotoSingleItem()
+                  }}
                 />
               ))}
             </ScrollView>
+          </View>
+          <View style={{ marginTop: 20, marginBottom: 20 }}>
+            <Text style={subTitleStyle}>Welcome to ClassPass</Text>
+            <View style={imageContainer}>
+              <Image
+                source={{
+                  uri: 'http://classpass.polbd.com/3.jpg',
+                  width: 360,
+                  height: 150,
+                }}
+              />
+              <Text style={titleText}>Where to begin?</Text>
+              <Text style={subTitle}>Not sure what Class pass is </Text>
+            </View>
           </View>
         </ScrollView>
         <AppFooter />

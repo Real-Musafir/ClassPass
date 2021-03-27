@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import Home from './container/Home'
+import SingleItem from './component/SinlgeItem'
 
 const Stack = createStackNavigator()
 
@@ -16,6 +17,11 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={Home}
+            options={{ headerTransparent: true, headerMode: 'none' }}
+          />
+          <Stack.Screen
+            name="SingleItem"
+            component={SingleItem}
             options={{ headerTransparent: true, headerMode: 'none' }}
           />
         </Stack.Navigator>

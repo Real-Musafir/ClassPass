@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
+import { Image } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Card } from 'react-native-elements'
 import { Typography, Colors } from '../styles'
 
 class YogaItem extends Component {
+  gotoSingleItem = () => {
+    console.log('goto single item')
+    this.props.gotoSingleItem?.()
+  }
   render() {
     const { title, image, status, rating, total } = this.props
     const imageContainer = {
@@ -21,21 +26,27 @@ class YogaItem extends Component {
       color: 'grey',
       marginLeft: 10,
     }
+    const Img = {
+      width: 200,
+      height: 150,
+    }
     return (
       <View>
         <View style={imageContainer}>
           <Image
-            source={{
-              uri: image,
-              width: 200,
-              height: 150,
+            onPress={() => {
+              this.gotoSingleItem()
             }}
+            style={Img}
+            source={{ uri: image }}
           />
           <Text style={titleText}>{title}</Text>
           <Text style={statusText}>{status}</Text>
-          <Text style={statusText}>
-            {rating} * ({total})
-          </Text>
+          <View style={{ marginBottom: 10 }}>
+            <Text style={statusText}>
+              {rating} * ({total})
+            </Text>
+          </View>
         </View>
       </View>
     )
