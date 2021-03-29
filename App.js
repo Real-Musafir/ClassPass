@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import Home from './container/Home'
 import SingleItem from './component/SinlgeItem'
+import ReferCompany from './container/ReferCompany'
 
 const Stack = createStackNavigator()
 
@@ -22,6 +23,11 @@ export default function App() {
           <Stack.Screen
             name="SingleItem"
             component={SingleItem}
+            options={{ headerTransparent: true, headerMode: 'none' }}
+          />
+          <Stack.Screen
+            name="ReferCompany"
+            component={ReferCompany}
             options={{ headerTransparent: true, headerMode: 'none' }}
           />
         </Stack.Navigator>
