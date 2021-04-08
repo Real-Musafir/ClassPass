@@ -29,7 +29,7 @@ class CloseHeader extends Component {
             containerStyle={{ marginRight: 10 }}
             buttonStyle={{ padding: 4, margin: 0 }}
             type="clear"
-            icon={<Icon name="times" size={22} color="#2a2a2a" />}
+            icon={<Icon name="arrow-left" size={18} color="#2a2a2a" />}
           />
         }
         centerComponent={<Text style={{ fontSize: 20 }}>{text}</Text>}
