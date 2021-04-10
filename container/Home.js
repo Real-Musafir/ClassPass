@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView } from 'react-native'
-import { Image } from 'react-native-elements'
+import { Image, Button } from 'react-native-elements'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 import AppFooter from '../component/AppFooter'
@@ -16,6 +16,9 @@ class Home extends Component {
   gotoReferCompany = () => {
     this.props.navigation.navigate('ReferCompany')
     // console.log('Go to refer company')
+  }
+  gotoTest = () => {
+    this.props.navigation.navigate('Search')
   }
   render() {
     const scrlStyle = {
@@ -289,6 +292,12 @@ class Home extends Component {
           </View>
         </ScrollView>
         <AppFooter />
+        <Button
+          onPress={this.gotoTest}
+          buttonStyle={{ backgroundColor: 'blue' }}
+          title="Just for test"
+          type="solid"
+        />
       </SafeAreaProvider>
     )
   }

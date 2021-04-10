@@ -6,19 +6,9 @@ import { Header, SearchBar } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 class AppFooter extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      searchText: '',
-    }
-  }
-  cartPress = () => {
-    console.log('cart presseddddddd')
-  }
-  updateSearch = (text) => {
-    this.setState({
-      searchText: text,
-    })
+  gotoSearch = () => {
+    console.log('This is search page')
+    this.props.navigation.navigate('Search')
   }
   render() {
     const rowData = {
@@ -35,7 +25,14 @@ class AppFooter extends Component {
           }}
         >
           <Icon name="home" size={22} iconStyle={{ marginTop: 20 }} />
-          <Icon name="search" size={22} iconStyle={{ marginTop: 20 }} />
+          <Icon
+            onPress={() => {
+              this.gotoSearch()
+            }}
+            name="search"
+            size={22}
+            iconStyle={{ marginTop: 20 }}
+          />
           <Icon name="tag" size={22} iconStyle={{ marginTop: 20 }} />
         </Header>
       </View>
