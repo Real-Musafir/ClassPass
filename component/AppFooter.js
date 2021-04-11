@@ -14,18 +14,19 @@ class AppFooter extends Component {
     const rowData = {
       flexDirection: 'row',
       justifyContent: 'space-between',
+      height: 70,
+      padding: 16,
+      backgroundColor: 'white',
     }
     return (
       <View style={rowData}>
-        <Header
-          containerStyle={{
-            backgroundColor: '#fff',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}
-        >
-          <Icon name="home" size={22} iconStyle={{ marginTop: 20 }} />
+        <View>
+          <Icon style={{ marginLeft: 8 }} name="home" size={22} />
+          <Text style={{ color: 'gray' }}>Home</Text>
+        </View>
+        <View>
           <Icon
+            style={{ marginLeft: 8 }}
             onPress={() => {
               this.gotoSearch()
             }}
@@ -33,8 +34,21 @@ class AppFooter extends Component {
             size={22}
             iconStyle={{ marginTop: 20 }}
           />
-          <Icon name="tag" size={22} iconStyle={{ marginTop: 20 }} />
-        </Header>
+          <Text style={{ color: 'gray' }}>Search</Text>
+        </View>
+
+        <View>
+          <Icon style={{ marginLeft: 22 }} name="tag" size={22} />
+          <Text style={{ color: 'gray' }}>Add credits</Text>
+        </View>
+        <View>
+          <Icon style={{ marginLeft: 20 }} name="calendar" size={22} />
+          <Text style={{ color: 'gray' }}>Upcoming</Text>
+        </View>
+        <View>
+          <Icon style={{ marginLeft: 20 }} name="user" size={22} />
+          <Text style={{ color: 'gray' }}>Profile</Text>
+        </View>
       </View>
     )
   }

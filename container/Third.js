@@ -22,6 +22,7 @@ class Third extends Component {
       fontSize: 25,
       fontWeight: 'bold',
       marginBottom: 20,
+      textAlign: 'center',
     }
     const weekBody = {
       borderWidth: 1,
@@ -42,8 +43,7 @@ class Third extends Component {
         </View>
         <ScrollView style={scrlStyle}>
           <Text style={headTitle}>
-            How familiar are you with studio &ensp; &ensp; &ensp; &ensp; fitness
-            classes?
+            How familiar are you with studio fitness classes?
           </Text>
           <View style={weekBody}>
             <Text style={{ padding: 20, fontSize: 15 }}>
@@ -62,7 +62,7 @@ class Third extends Component {
           </View>
         </ScrollView>
         <View style={{ height: 8, width: 180, backgroundColor: 'blue' }}></View>
-        <View style={{ padding: 15 }}>
+        <View style={{ padding: 15, backgroundColor: 'white' }}>
           <Button
             onPress={this.gotoFourth}
             buttonStyle={{ backgroundColor: 'blue' }}

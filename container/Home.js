@@ -291,13 +291,13 @@ class Home extends Component {
             </View>
           </View>
         </ScrollView>
-        <AppFooter />
-        <Button
+        <AppFooter navigation={this.props.navigation} />
+        {/* <Button
           onPress={this.gotoTest}
           buttonStyle={{ backgroundColor: 'blue' }}
           title="Just for test"
           type="solid"
-        />
+        /> */}
       </SafeAreaProvider>
     )
   }

@@ -16,43 +16,47 @@ class First extends Component {
     const scrlStyle = {
       backgroundColor: '#fff',
       padding: 10,
-      marginTop: 15,
     }
     const headTitle = {
-      paddingTop: 10,
+      marginTop: 30,
       fontSize: 40,
       fontWeight: 'bold',
-      marginLeft: 125,
+      textAlign: 'center',
+      marginBottom: 20,
     }
     const subtitle = {
       fontSize: 20,
       color: 'gray',
-      marginTop: 20,
-      marginLeft: 50,
-      width: 320,
+      textAlign: 'center',
       marginBottom: 10,
     }
     const Img = {
-      width: 350,
+      width: 400,
       height: 320,
-      marginLeft: 20,
+      // marginLeft: 10,
+    }
+    const ImgView = {
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 10,
+      marginBottom: 10,
     }
     return (
       <SafeAreaProvider>
         <ScrollView style={scrlStyle}>
           <Text style={headTitle}>Hi, Katie</Text>
-          <Text style={subtitle}>
-            Ready to hit the ground running? &ensp; We'll help you get started
-          </Text>
-          <Image
-            onPress={this.gotoReferCompany}
-            style={Img}
-            source={require('../assets/first_page_pic.png')}
-          />
+          <Text style={subtitle}>Ready to hit the ground running?</Text>
+          <Text style={subtitle}>We'll help you get started</Text>
+          <View style={ImgView}>
+            <Image
+              style={Img}
+              source={require('../assets/first_page_pic.png')}
+            />
+          </View>
           <Text style={subtitle}>A few quick questions is all it takes</Text>
         </ScrollView>
         <View style={{ height: 8, width: 60, backgroundColor: 'blue' }}></View>
-        <View style={{ padding: 15 }}>
+        <View style={{ padding: 10, backgroundColor: 'white' }}>
           <Button
             onPress={this.gotoSecond}
             buttonStyle={{ backgroundColor: 'blue' }}

@@ -98,7 +98,7 @@ class Search extends Component {
             />
           ))}
         </ScrollView>
-        <AppFooter />
+        <AppFooter navigation={this.props.navigation} />
       </SafeAreaProvider>
     )
   }

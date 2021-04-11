@@ -22,7 +22,7 @@ class Fourth extends Component {
       fontSize: 25,
       fontWeight: 'bold',
       marginBottom: 20,
-      marginLeft: 50,
+      textAlign: 'center',
     }
     const weekBody = {
       borderWidth: 1,
@@ -64,7 +64,7 @@ class Fourth extends Component {
           </View>
         </ScrollView>
         <View style={{ height: 8, width: 220, backgroundColor: 'blue' }}></View>
-        <View style={{ padding: 15 }}>
+        <View style={{ padding: 15, backgroundColor: 'white' }}>
           <Button
             onPress={this.gotoFifth}
             buttonStyle={{ backgroundColor: 'blue' }}
