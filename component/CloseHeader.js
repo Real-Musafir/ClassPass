@@ -33,7 +33,9 @@ class CloseHeader extends Component {
           />
         }
         centerComponent={<Text style={{ fontSize: 20 }}>{text}</Text>}
-        rightComponent={<Text></Text>}
+        rightComponent={
+          <Icon name={this.props.right} size={18} color="#2a2a2a" />
+        }
       />
     )
   }

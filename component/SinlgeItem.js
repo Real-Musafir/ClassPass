@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
-import { View, Text, Dimensions, Image, ScrollView, Button } from 'react-native'
+import { View, Text, Dimensions, Image, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import CloseHeader from './CloseHeader'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Typography, Colors } from '../styles'
-import { Avatar, Badge, withBadge } from 'react-native-elements'
+import { Avatar, Badge, withBadge, Button } from 'react-native-elements'
 import YogaItem from './YogaItem'
 
 class SingleItem extends Component {
+  gotoSingleItem = () => {
+    this.props.navigation.navigate('SingleItem')
+    console.log('This is single item')
+  }
   render() {
     const items = [
       {
@@ -69,8 +73,8 @@ class SingleItem extends Component {
       marginBottom: 15,
     }
     const bdg = {
-      backgroundColor: '#4169E1',
-      width: 50,
+      backgroundColor: '#663399',
+      width: 60,
       height: 30,
       borderRadius: 20,
     }
@@ -125,14 +129,47 @@ class SingleItem extends Component {
       marginTop: 20,
       marginBottom: 25,
     }
+    const inviteIcon = {
+      width: 30,
+      height: 30,
+      backgroundColor: 'blue',
+      marginTop: 13,
+      borderRadius: 15,
+    }
+    const classPassMember = {
+      height: 50,
+      backgroundColor: '#87CEEB',
+      borderRadius: 6,
+      marginBottom: 20,
+    }
+    const classPassMemberText = {
+      textAlign: 'center',
+      padding: 14,
+      fontSize: 15,
+    }
+    const bookingIcon = {
+      width: 30,
+      height: 30,
+      backgroundColor: '#FF0000',
+      borderRadius: 18,
+    }
+    const amenitiesView = {
+      marginTop: 15,
+      padding: 10,
+      borderWidth: 2,
+      borderColor: Colors.lightGray,
+      marginBottom: 10,
+    }
+    const amenities = ['Showers', 'Locker', 'Towels']
 
     return (
       <SafeAreaProvider>
         <View style={{ flex: 0, width: windowWidth }}>
           <CloseHeader
-            icon="angle-left"
+            //  icon="angle-left"
             navigation={this.props.navigation}
             text=""
+            right="heart"
           />
         </View>
         <ScrollView style={scrlStyle}>
@@ -148,18 +185,49 @@ class SingleItem extends Component {
             <Text style={titleStyle}>Barry's</Text>
             <Text>At Home</Text>
             <View style={invFnd}>
-              <Icon name="user-plus" size={18} style={{ marginTop: 15 }} />
+              <View style={inviteIcon}>
+                <Icon
+                  name="user-plus"
+                  size={18}
+                  style={{ padding: 6, color: 'white' }}
+                />
+              </View>
               <Text style={invText}>Invite friends to join you</Text>
             </View>
             <View style={rvw}>
               <Text style={subTitle}>Reviews</Text>
               <View style={{ flexDirection: 'row' }}>
                 <View style={bdg}>
-                  <Text style={bdgTxt}>4.7 *</Text>
+                  <Text style={bdgTxt}>
+                    4.7{' '}
+                    <Icon
+                      name="star"
+                      // size={18}
+                      style={{ color: 'white' }}
+                    />{' '}
+                  </Text>
                 </View>
                 <Text style={{ padding: 5 }}>Great(500+)</Text>
               </View>
               <Text style={rdText}>Read all reviews</Text>
+              <View style={classPassMember}>
+                <Text style={classPassMemberText}>
+                  ClassPass member usually save 24% here
+                </Text>
+              </View>
+              <View style={{ flexDirection: 'row', marginBottom: 20 }}>
+                <View style={bookingIcon}>
+                  <Icon
+                    name="line-chart"
+                    size={18}
+                    style={{ padding: 5, color: 'white' }}
+                  />
+                </View>
+                <Text style={{ padding: 2, fontSize: 18 }}>
+                  {' '}
+                  50+ booking this week
+                </Text>
+              </View>
             </View>
             <Text style={subTitle}>Safety & Cleanliness</Text>
             <Text style={{ fontSize: 15 }}>
@@ -261,6 +329,28 @@ class SingleItem extends Component {
                 designed to help your body burn
               </Text>
             </View>
+            <View style={amenitiesView}>
+              <Text
+                style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 15 }}
+              >
+                Amenities
+              </Text>
+              {amenities.map((item, index) => (
+                <View style={{ flexDirection: 'row' }}>
+                  <Icon
+                    style={{ color: 'gray', marginTop: 3, marginBottom: 5 }}
+                    name="check"
+                    size={16}
+                  />
+                  <Text
+                    style={{ marginLeft: 5, fontSize: 15, marginBottom: 5 }}
+                    key={index}
+                  >
+                    {item}
+                  </Text>
+                </View>
+              ))}
+            </View>
             <View
               style={{
                 borderBottomWidth: 2,
@@ -272,11 +362,11 @@ class SingleItem extends Component {
               <View style={rawData}>
                 <Icon name="share" size={18} style={{ marginTop: 15 }} />
                 <View style={rawData2}>
-                  <Text>@Irebeluk</Text>
+                  <Text style={{ marginTop: 5 }}>@Irebeluk</Text>
                   <Icon
                     name="angle-right"
                     size={18}
-                    style={{ marginLeft: 250 }}
+                    style={{ marginLeft: 250, marginTop: 5 }}
                   />
                 </View>
               </View>
@@ -317,14 +407,20 @@ class SingleItem extends Component {
                     status={item.status}
                     rating={item.rating}
                     total={item.total}
+                    gotoSingleItem={() => {
+                      this.gotoSingleItem()
+                    }}
                   />
                 ))}
               </ScrollView>
             </View>
           </View>
         </ScrollView>
-        <View style={{ padding: 10 }}>
-          <Button title="View schedule" />
+        <View style={{ padding: 15, backgroundColor: 'white' }}>
+          <Button
+            buttonStyle={{ backgroundColor: 'blue' }}
+            title="View schedule"
+          />
         </View>
       </SafeAreaProvider>
     )
