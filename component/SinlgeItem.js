@@ -12,6 +12,9 @@ class SingleItem extends Component {
     this.props.navigation.navigate('SingleItem')
     console.log('This is single item')
   }
+  gotoShedule = () => {
+    this.props.navigation.navigate('Shedule')
+  }
   render() {
     const items = [
       {
@@ -418,6 +421,7 @@ class SingleItem extends Component {
         </ScrollView>
         <View style={{ padding: 15, backgroundColor: 'white' }}>
           <Button
+            onPress={this.gotoShedule}
             buttonStyle={{ backgroundColor: 'blue' }}
             title="View schedule"
           />

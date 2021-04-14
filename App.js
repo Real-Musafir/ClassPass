@@ -14,6 +14,7 @@ import Fourth from './container/Fourth'
 import Fifth from './container/Fifth'
 import Search from './container/Search'
 import SingleSearchItem from './component/SingleSearchItem'
+import Shedule from './component/Shedule'
 
 const Stack = createStackNavigator()
 
@@ -72,6 +73,12 @@ export default function App() {
           <Stack.Screen
             name="SingleSearchItem"
             component={SingleSearchItem}
+            options={{ headerTransparent: true, headerMode: 'none' }}
+          />
+
+          <Stack.Screen
+            name="Shedule"
+            component={Shedule}
             options={{ headerTransparent: true, headerMode: 'none' }}
           />
         </Stack.Navigator>
