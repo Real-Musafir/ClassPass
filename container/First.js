@@ -42,7 +42,7 @@ class First extends Component {
       marginBottom: 10,
     }
     return (
-      <SafeAreaProvider>
+      <SafeAreaProvider style={{ backgroundColor: 'white' }}>
         <ScrollView style={scrlStyle}>
           <Text style={headTitle}>Hi, Katie</Text>
           <Text style={subtitle}>Ready to hit the ground running?</Text>

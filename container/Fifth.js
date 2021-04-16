@@ -33,7 +33,7 @@ class Fifth extends Component {
 
     const windowWidth = Dimensions.get('window').width
     return (
-      <SafeAreaProvider>
+      <SafeAreaProvider style={{ backgroundColor: 'white' }}>
         <View style={{ flex: 0, width: windowWidth }}>
           <CloseHeader
             icon="angle-left"

@@ -10,6 +10,10 @@ class AppFooter extends Component {
     console.log('This is search page')
     this.props.navigation.navigate('Search')
   }
+  gotoProfile = () => {
+    console.log('This is Profile page')
+    this.props.navigation.navigate('Profile')
+  }
   render() {
     const rowData = {
       flexDirection: 'row',
@@ -46,7 +50,14 @@ class AppFooter extends Component {
           <Text style={{ color: 'gray' }}>Upcoming</Text>
         </View>
         <View>
-          <Icon style={{ marginLeft: 20 }} name="user" size={22} />
+          <Icon
+            onPress={() => {
+              this.gotoProfile()
+            }}
+            style={{ marginLeft: 20 }}
+            name="user"
+            size={22}
+          />
           <Text style={{ color: 'gray' }}>Profile</Text>
         </View>
       </View>
